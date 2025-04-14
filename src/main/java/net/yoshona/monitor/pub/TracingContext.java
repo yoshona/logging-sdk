@@ -14,4 +14,8 @@ public class TracingContext {
   public static long getTraceId() {
     return traceInfo.get();
   }
+
+  public static void clear() {
+    traceInfo.remove();
+  }
 }
