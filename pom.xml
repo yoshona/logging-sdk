@@ -12,8 +12,8 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <logback.version>1.5.8</logback.version>
-        <redisson.version>3.37.0</redisson.version>
+        <logback.version>1.5.18</logback.version>
+        <redisson.version>3.45.0</redisson.version>
         <rocketmq.version>5.0.7</rocketmq.version>
         <rabbitmq.version>5.24.0</rabbitmq.version>
         <ttl.version>2.14.5</ttl.version>
