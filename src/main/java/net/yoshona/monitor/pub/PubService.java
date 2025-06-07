@@ -10,4 +10,7 @@ public interface PubService {
   void publish(LoggingMessage loggingMessage) throws IOException;
 
   void close() throws IOException, TimeoutException;
+
+
+  boolean isAlive();
 }

@@ -32,4 +32,9 @@ public class RedisPubServiceImpl implements PubService {
   public void close() {
     redisson.shutdown();
   }
+
+  @Override
+  public boolean isAlive() {
+    return !redisson.isShutdown();
+  }
 }

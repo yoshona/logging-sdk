@@ -29,6 +29,11 @@ public class RabbitMQPubServiceImpl implements PubService {
     connection.close();
   }
 
+  @Override
+  public boolean isAlive() {
+    return channel.isOpen();
+  }
+
   public RabbitMQPubServiceImpl(LogAppender.PubConfiguration configuration)
       throws IOException,
           TimeoutException,

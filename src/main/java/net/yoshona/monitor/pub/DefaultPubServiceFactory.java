@@ -16,8 +16,13 @@ public class DefaultPubServiceFactory {
   private static final AtomicReference<PubService> pubService = new AtomicReference<>();
 
   public static PubService getPubService(LogAppender.PubConfiguration configuration) {
-    pubService.compareAndSet(null, doGetPubService(configuration));
-    return pubService.get();
+    return pubService.updateAndGet(
+        currentService -> {
+          if (null == currentService || !currentService.isAlive()) {
+            return doGetPubService(configuration);
+          }
+          return currentService;
+        });
   }
 
   private static PubService doGetPubService(LogAppender.PubConfiguration configuration) {
