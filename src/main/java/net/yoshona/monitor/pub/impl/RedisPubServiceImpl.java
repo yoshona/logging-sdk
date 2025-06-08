@@ -20,7 +20,7 @@ public class RedisPubServiceImpl implements PubService {
         .setAddress(configuration.getUri())
         .setUsername(configuration.getUsername())
         .setPassword(configuration.getPassword());
-    redisson = Redisson.create();
+    redisson = Redisson.create(config);
   }
 
   @Override
